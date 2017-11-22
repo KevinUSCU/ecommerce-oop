@@ -11,7 +11,9 @@ class Store {
   }
 
   loadProductsAsync () {
-    return ProductAPI.get().then(({ data }) => this.productsList = new ProductList(data))
+    return ProductAPI.get().then(({ data }) => {
+      this.productsList = new ProductList(data)
+    })
   }
 
   render () {

@@ -1,5 +1,6 @@
-class ProductList {
+class ProductList extends RenderFactory {
   constructor (productsInfo) {
+    super()
     this.products = productsInfo.map(info => new Product(info))
   }
 
@@ -8,8 +9,7 @@ class ProductList {
   }
 
   render (containerId) {
-    const container = document.querySelector(containerId)
-    container.innerHTML = this.toHTML()
+    super.render(containerId)
     this.products.forEach(product => product.addEventListeners())
   }
 }
