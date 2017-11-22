@@ -3,7 +3,7 @@ class ClickListener {
 
   static add (item, callback, preventDefault=true) {
     document.querySelector(item).addEventListener('click', (event) => {
-      event.preventDefault()
+      if (preventDefault) event.preventDefault()
       callback()
     })
   }
