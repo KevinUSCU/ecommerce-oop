@@ -10,5 +10,6 @@ class ProductList {
   render (containerId) {
     const container = document.querySelector(containerId)
     container.innerHTML = this.toHTML()
+    this.products.forEach(product => product.addEventListeners())
   }
 }

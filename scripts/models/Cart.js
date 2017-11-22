@@ -3,6 +3,10 @@ class Cart {
     this.products = []
   }
 
+  add (product) {
+    this.products.push(product)
+  }
+
   toHTML () {
     return `
       <a class="nav-link text-white" href="#">

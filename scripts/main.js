@@ -1,6 +1,6 @@
-window.store = new Store()
+window.store = new Store('#products-container', '#cart-container')
 window.store
   // Load products asynchronously
   .loadProductsAsync()
   // render products and cart
-  .then(() => window.store.render('#products-container', '#cart-container'))
+  .then(() => window.store.render())

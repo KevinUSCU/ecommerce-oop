@@ -20,8 +20,11 @@ class Product {
     `
   }
 
-  render (containerId) {
-    const container = document.querySelector(containerId)
-    container.innerHTML = this.toHTML()
+  addEventListeners () {
+    const product = document.querySelector(`[data-id="${this.id}"]`)
+    product.addEventListener('click', (event) => {
+      event.preventDefault()
+      window.store.addToCart(this)
+    })
   }
 }
