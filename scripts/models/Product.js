@@ -22,9 +22,6 @@ class Product {
 
   addEventListeners () {
     const product = document.querySelector(`[data-id="${this.id}"]`)
-    product.addEventListener('click', (event) => {
-      event.preventDefault()
-      window.store.addToCart(this)
-    })
+    ClickListener.add(product, () => window.store.addToCart(this))
   }
 }
